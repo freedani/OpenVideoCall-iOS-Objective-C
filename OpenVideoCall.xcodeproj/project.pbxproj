@@ -12,7 +12,6 @@
 		076C59801DDDBC3500F813E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076C597E1DDDBC3500F813E2 /* Main.storyboard */; };
 		076C59821DDDBC3500F813E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076C59811DDDBC3500F813E2 /* Assets.xcassets */; };
 		076C59851DDDBC3500F813E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076C59831DDDBC3500F813E2 /* LaunchScreen.storyboard */; };
-		076C598E1DDDBCF300F813E2 /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076C598D1DDDBCF300F813E2 /* AgoraRtcEngineKit.framework */; };
 		076C59961DDDBDE300F813E2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C59931DDDBDE200F813E2 /* SettingsViewController.m */; };
 		076C59971DDDBDE300F813E2 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C59951DDDBDE300F813E2 /* ProfileCell.m */; };
 		076C599A1DDDBF1500F813E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C59991DDDBF1500F813E2 /* MainViewController.m */; };
@@ -27,6 +26,8 @@
 		076C59B21DDDDE7000F813E2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076C59B11DDDDE7000F813E2 /* AudioToolbox.framework */; };
 		076C59B41DDDDE7600F813E2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 076C59B31DDDDE7600F813E2 /* libc++.tbd */; };
 		076C59B61DDDDE7A00F813E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076C59B51DDDDE7A00F813E2 /* AVFoundation.framework */; };
+		07D29C5B1E9E1ED900C3583C /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D29C5A1E9E1ED900C3583C /* AgoraRtcEngineKit.framework */; };
+		07D29C5D1E9E1EFE00C3583C /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D29C5C1E9E1EFE00C3583C /* libresolv.tbd */; };
 		07F531B91E28AE69009BFE58 /* OpenVideoCallUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F531B81E28AE69009BFE58 /* OpenVideoCallUITests.m */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +50,6 @@
 		076C59811DDDBC3500F813E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		076C59841DDDBC3500F813E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		076C59861DDDBC3500F813E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		076C598D1DDDBCF300F813E2 /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
 		076C59921DDDBDE200F813E2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		076C59931DDDBDE200F813E2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		076C59941DDDBDE300F813E2 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
@@ -72,6 +72,8 @@
 		076C59B11DDDDE7000F813E2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		076C59B31DDDDE7600F813E2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		076C59B51DDDDE7A00F813E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		07D29C5A1E9E1ED900C3583C /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
+		07D29C5C1E9E1EFE00C3583C /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		07F531B61E28AE69009BFE58 /* OpenVideoCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenVideoCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F531B81E28AE69009BFE58 /* OpenVideoCallUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenVideoCallUITests.m; sourceTree = "<group>"; };
 		07F531BA1E28AE69009BFE58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,13 +84,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D29C5D1E9E1EFE00C3583C /* libresolv.tbd in Frameworks */,
 				076C59B61DDDDE7A00F813E2 /* AVFoundation.framework in Frameworks */,
 				076C59B41DDDDE7600F813E2 /* libc++.tbd in Frameworks */,
 				076C59B21DDDDE7000F813E2 /* AudioToolbox.framework in Frameworks */,
 				076C59B01DDDDE6900F813E2 /* VideoToolbox.framework in Frameworks */,
+				07D29C5B1E9E1ED900C3583C /* AgoraRtcEngineKit.framework in Frameworks */,
 				076C59AE1DDDDE6100F813E2 /* CoreMedia.framework in Frameworks */,
 				076C59AC1DDDDE5D00F813E2 /* CoreTelephony.framework in Frameworks */,
-				076C598E1DDDBCF300F813E2 /* AgoraRtcEngineKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +130,7 @@
 				076C598F1DDDBCFE00F813E2 /* Controllers */,
 				076C59901DDDBD0600F813E2 /* Views */,
 				076C59911DDDBD0D00F813E2 /* Models */,
-				076C598C1DDDBCF300F813E2 /* libs */,
+				07D29C5A1E9E1ED900C3583C /* AgoraRtcEngineKit.framework */,
 				076C59781DDDBC3500F813E2 /* AppDelegate.h */,
 				076C59791DDDBC3500F813E2 /* AppDelegate.m */,
 				076C59811DDDBC3500F813E2 /* Assets.xcassets */,
@@ -144,14 +147,6 @@
 				076C59761DDDBC3500F813E2 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		076C598C1DDDBCF300F813E2 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				076C598D1DDDBCF300F813E2 /* AgoraRtcEngineKit.framework */,
-			);
-			path = libs;
 			sourceTree = "<group>";
 		};
 		076C598F1DDDBCFE00F813E2 /* Controllers */ = {
@@ -195,6 +190,7 @@
 		076C59AA1DDDDE5C00F813E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07D29C5C1E9E1EFE00C3583C /* libresolv.tbd */,
 				076C59B51DDDDE7A00F813E2 /* AVFoundation.framework */,
 				076C59B31DDDDE7600F813E2 /* libc++.tbd */,
 				076C59B11DDDDE7000F813E2 /* AudioToolbox.framework */,
@@ -258,11 +254,12 @@
 		076C596A1DDDBC3500F813E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Agora;
 				TargetAttributes = {
 					076C59711DDDBC3500F813E2 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 48TB6ZZL5S;
 						ProvisioningStyle = Automatic;
 					};
 					07F531B51E28AE69009BFE58 = {
@@ -385,6 +382,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -433,6 +431,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -461,11 +460,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OpenVideoCall/libs",
+					"$(PROJECT_DIR)/OpenVideoCall",
 				);
 				INFOPLIST_FILE = OpenVideoCall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -479,11 +478,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OpenVideoCall/libs",
+					"$(PROJECT_DIR)/OpenVideoCall",
 				);
 				INFOPLIST_FILE = OpenVideoCall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -549,6 +548,7 @@
 				07F531BE1E28AE69009BFE58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
