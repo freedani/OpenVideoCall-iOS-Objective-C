@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
+#import "EncryptionType.h"
 
 @class RoomViewController;
 @protocol RoomVCDelegate <NSObject>
@@ -17,5 +18,7 @@
 @interface RoomViewController : UIViewController
 @property (copy, nonatomic) NSString *roomName;
 @property (assign, nonatomic) AgoraRtcVideoProfile videoProfile;
+@property (assign, nonatomic) EncrypType encrypType;
+@property (copy, nonatomic) NSString *encrypSecret;
 @property (weak, nonatomic) id<RoomVCDelegate> delegate;
 @end

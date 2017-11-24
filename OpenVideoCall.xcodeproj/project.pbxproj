@@ -29,6 +29,14 @@
 		07D29C5B1E9E1ED900C3583C /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D29C5A1E9E1ED900C3583C /* AgoraRtcEngineKit.framework */; };
 		07D29C5D1E9E1EFE00C3583C /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D29C5C1E9E1EFE00C3583C /* libresolv.tbd */; };
 		07F531B91E28AE69009BFE58 /* OpenVideoCallUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F531B81E28AE69009BFE58 /* OpenVideoCallUITests.m */; };
+		A7327ECA1FC7B51900882882 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7327EC81FC7B51900882882 /* libcrypto.a */; };
+		A7327ECB1FC7B51900882882 /* AgoraRtcCryptoLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7327EC91FC7B51900882882 /* AgoraRtcCryptoLoader.framework */; };
+		A7327ECE1FC7B5E300882882 /* EncryptionType.m in Sources */ = {isa = PBXBuildFile; fileRef = A7327ECD1FC7B5E300882882 /* EncryptionType.m */; };
+		A7327ED11FC7C7C900882882 /* MsgTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7327ED01FC7C7C900882882 /* MsgTableView.m */; };
+		A7327ED41FC7C7DB00882882 /* MsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7327ED31FC7C7DB00882882 /* MsgCell.m */; };
+		A7327ED71FC7C7EE00882882 /* MsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A7327ED61FC7C7EE00882882 /* MsgModel.m */; };
+		A7327EDA1FC7C99C00882882 /* MessageType.m in Sources */ = {isa = PBXBuildFile; fileRef = A7327ED91FC7C99C00882882 /* MessageType.m */; };
+		A7327EDF1FC7D3D700882882 /* AGVideoPreProcessing.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7327EDE1FC7D3D700882882 /* AGVideoPreProcessing.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +85,20 @@
 		07F531B61E28AE69009BFE58 /* OpenVideoCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenVideoCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F531B81E28AE69009BFE58 /* OpenVideoCallUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenVideoCallUITests.m; sourceTree = "<group>"; };
 		07F531BA1E28AE69009BFE58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7327EC81FC7B51900882882 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = OpenVideoCall/libcrypto.a; sourceTree = "<group>"; };
+		A7327EC91FC7B51900882882 /* AgoraRtcCryptoLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcCryptoLoader.framework; path = OpenVideoCall/AgoraRtcCryptoLoader.framework; sourceTree = "<group>"; };
+		A7327ECC1FC7B5E300882882 /* EncryptionType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EncryptionType.h; sourceTree = "<group>"; };
+		A7327ECD1FC7B5E300882882 /* EncryptionType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EncryptionType.m; sourceTree = "<group>"; };
+		A7327ECF1FC7C7C900882882 /* MsgTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgTableView.h; sourceTree = "<group>"; };
+		A7327ED01FC7C7C900882882 /* MsgTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgTableView.m; sourceTree = "<group>"; };
+		A7327ED21FC7C7DB00882882 /* MsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgCell.h; sourceTree = "<group>"; };
+		A7327ED31FC7C7DB00882882 /* MsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgCell.m; sourceTree = "<group>"; };
+		A7327ED51FC7C7EE00882882 /* MsgModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgModel.h; sourceTree = "<group>"; };
+		A7327ED61FC7C7EE00882882 /* MsgModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgModel.m; sourceTree = "<group>"; };
+		A7327ED81FC7C99C00882882 /* MessageType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageType.h; sourceTree = "<group>"; };
+		A7327ED91FC7C99C00882882 /* MessageType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageType.m; sourceTree = "<group>"; };
+		A7327EDB1FC7D31900882882 /* AGVideoPreProcessing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGVideoPreProcessing.h; sourceTree = "<group>"; };
+		A7327EDE1FC7D3D700882882 /* AGVideoPreProcessing.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AGVideoPreProcessing.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7327ECA1FC7B51900882882 /* libcrypto.a in Frameworks */,
+				A7327ECB1FC7B51900882882 /* AgoraRtcCryptoLoader.framework in Frameworks */,
 				07D29C5D1E9E1EFE00C3583C /* libresolv.tbd in Frameworks */,
 				076C59B61DDDDE7A00F813E2 /* AVFoundation.framework in Frameworks */,
 				076C59B41DDDDE7600F813E2 /* libc++.tbd in Frameworks */,
@@ -168,6 +192,10 @@
 				076C597E1DDDBC3500F813E2 /* Main.storyboard */,
 				076C59941DDDBDE300F813E2 /* ProfileCell.h */,
 				076C59951DDDBDE300F813E2 /* ProfileCell.m */,
+				A7327ECF1FC7C7C900882882 /* MsgTableView.h */,
+				A7327ED01FC7C7C900882882 /* MsgTableView.m */,
+				A7327ED21FC7C7DB00882882 /* MsgCell.h */,
+				A7327ED31FC7C7DB00882882 /* MsgCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -183,6 +211,14 @@
 				076C59A81DDDC9FD00F813E2 /* VideoView.m */,
 				076C59A31DDDBF3100F813E2 /* VideoViewLayouter.h */,
 				076C59A41DDDBF3100F813E2 /* VideoViewLayouter.m */,
+				A7327ECC1FC7B5E300882882 /* EncryptionType.h */,
+				A7327ECD1FC7B5E300882882 /* EncryptionType.m */,
+				A7327ED51FC7C7EE00882882 /* MsgModel.h */,
+				A7327ED61FC7C7EE00882882 /* MsgModel.m */,
+				A7327ED81FC7C99C00882882 /* MessageType.h */,
+				A7327ED91FC7C99C00882882 /* MessageType.m */,
+				A7327EDB1FC7D31900882882 /* AGVideoPreProcessing.h */,
+				A7327EDE1FC7D3D700882882 /* AGVideoPreProcessing.mm */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -190,6 +226,8 @@
 		076C59AA1DDDDE5C00F813E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7327EC91FC7B51900882882 /* AgoraRtcCryptoLoader.framework */,
+				A7327EC81FC7B51900882882 /* libcrypto.a */,
 				07D29C5C1E9E1EFE00C3583C /* libresolv.tbd */,
 				076C59B51DDDDE7A00F813E2 /* AVFoundation.framework */,
 				076C59B31DDDDE7600F813E2 /* libc++.tbd */,
@@ -260,7 +298,7 @@
 					076C59711DDDBC3500F813E2 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 48TB6ZZL5S;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					07F531B51E28AE69009BFE58 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -313,15 +351,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7327ED41FC7C7DB00882882 /* MsgCell.m in Sources */,
 				076C59A01DDDBF2200F813E2 /* KeyCenter.m in Sources */,
+				A7327EDF1FC7D3D700882882 /* AGVideoPreProcessing.mm in Sources */,
 				076C59961DDDBDE300F813E2 /* SettingsViewController.m in Sources */,
 				076C59A61DDDBF3100F813E2 /* VideoViewLayouter.m in Sources */,
 				076C599F1DDDBF2200F813E2 /* RoomViewController.m in Sources */,
 				076C59971DDDBDE300F813E2 /* ProfileCell.m in Sources */,
 				076C59A51DDDBF3100F813E2 /* VideoSession.m in Sources */,
 				076C59A91DDDC9FD00F813E2 /* VideoView.m in Sources */,
+				A7327ED11FC7C7C900882882 /* MsgTableView.m in Sources */,
 				076C597A1DDDBC3500F813E2 /* AppDelegate.m in Sources */,
 				076C599A1DDDBF1500F813E2 /* MainViewController.m in Sources */,
+				A7327ED71FC7C7EE00882882 /* MsgModel.m in Sources */,
+				A7327EDA1FC7C99C00882882 /* MessageType.m in Sources */,
+				A7327ECE1FC7B5E300882882 /* EncryptionType.m in Sources */,
 				076C59771DDDBC3500F813E2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -467,9 +512,16 @@
 					"$(PROJECT_DIR)/OpenVideoCall",
 				);
 				INFOPLIST_FILE = OpenVideoCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenVideoCall",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.OpenVideoCall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dc253ab3-71e4-40a3-a57c-a3a763407202";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraIODev2017;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -478,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -485,9 +538,16 @@
 					"$(PROJECT_DIR)/OpenVideoCall",
 				);
 				INFOPLIST_FILE = OpenVideoCall/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenVideoCall",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.OpenVideoCall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dc253ab3-71e4-40a3-a57c-a3a763407202";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraIODev2017;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -10,6 +10,9 @@
 #import "VideoSession.h"
 #import "VideoViewLayouter.h"
 #import "KeyCenter.h"
+#import <AgoraRtcCryptoLoader/AgoraRtcCryptoLoader.h>
+#import "MsgTableView.h"
+#import "AGVideoPreProcessing.h"
 
 @interface RoomViewController () <AgoraRtcEngineDelegate>
 @property (weak, nonatomic) IBOutlet UIView *containerView;
@@ -26,6 +29,10 @@
 
 @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *backgroundTap;
 @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *backgroundDoubleTap;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *msgInputViewBottom;
+@property (weak, nonatomic) IBOutlet UITextField *msgTextField;
+@property (weak, nonatomic) IBOutlet MsgTableView *msgTableView;
+@property (weak, nonatomic) IBOutlet UIView *msgInputView;
 
 @property (strong, nonatomic) AgoraRtcEngineKit *agoraKit;
 @property (strong, nonatomic) NSMutableArray<VideoSession *> *videoSessions;
@@ -37,9 +44,14 @@
 @property (assign, nonatomic) BOOL videoMuted;
 @property (assign, nonatomic) BOOL speakerEnabled;
 
+@property (strong, nonatomic) AgoraRtcCryptoLoader *agoraLoader;
+
 @end
 
 @implementation RoomViewController
+
+static NSInteger streamID = 0;
+
 - (void)setShouldHideFlowViews:(BOOL)shouldHideFlowViews {
     _shouldHideFlowViews = shouldHideFlowViews;
     if (self.flowViews.count) {
@@ -89,14 +101,78 @@
     [self.agoraKit setEnableSpeakerphone:speakerEnabled];
 }
 
+#pragma mark - View did load
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.videoSessions = [[NSMutableArray alloc] init];
-    
+    self.agoraLoader = [[AgoraRtcCryptoLoader alloc] init];
     self.roomNameLabel.text = self.roomName;
+    self.msgInputView.alpha = 0;
     [self.backgroundTap requireGestureRecognizerToFail:self.backgroundDoubleTap];
     
     [self loadAgoraKit];
+    [self addKeyboardObserver];
+}
+
+#pragma mark - Send Data Stream
+- (void)addKeyboardObserver {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
+- (void)keyboardFrameChange:(NSNotification *)info {
+    
+    CGRect keyboardEndFrame = [info.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat ty = [UIScreen mainScreen].bounds.size.height - keyboardEndFrame.origin.y;
+    double duration = [info.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    CGFloat constant;
+    
+    if (ty > 0) {
+        constant = ty;
+        self.msgInputView.alpha = 1;
+    }
+    else {
+        constant = 0;
+        self.msgInputView.alpha = 0;
+    }
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.msgInputViewBottom.constant = constant;
+        [self.view layoutIfNeeded];
+    }];
+    
+}
+
+- (void)sendDataWithString:(NSString *)message {
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    [self.msgTableView appendMsgToTableViewWithMsg:message msgType:MsgTypeChat];
+    [self.agoraKit sendStreamMessage:streamID data:data];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self sendDataWithString:textField.text];
+    textField.text = @"";
+    return YES;
+}
+
+#pragma mark - Click Action
+- (IBAction)doFilterPressed:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    
+    if (sender.selected) {
+        [AGVideoPreProcessing registerVideoPreprocessing:self.agoraKit];
+    }
+    else {
+        [AGVideoPreProcessing deregisterVideoPreprocessing:self.agoraKit];
+    }
+}
+
+- (IBAction)doMesPressed:(UIButton *)sender {
+    [self.msgTextField becomeFirstResponder];
+}
+
+- (IBAction)doHideKeyboardPressed:(UIButton *)sender {
+    [self.msgTextField resignFirstResponder];
 }
 
 - (IBAction)doMuteVideoPressed:(UIButton *)sender {
@@ -134,6 +210,7 @@
     }
 }
 
+#pragma mark - Video View Layout
 - (void)updateInterfaceWithSessions:(NSArray *)sessions targetSize:(CGSize)targetSize animation:(BOOL)animation {
     if (animation) {
         [UIView animateWithDuration:0.3 animations:^{
@@ -248,12 +325,17 @@
     }
 }
 
-//MARK: - Agora Media SDK
+#pragma mark - Agora Media SDK
 - (void)loadAgoraKit {
     self.agoraKit = [AgoraRtcEngineKit sharedEngineWithAppId:[KeyCenter AppId] delegate:self];
     [self.agoraKit setChannelProfile:AgoraRtc_ChannelProfile_Communication];
     [self.agoraKit enableVideo];
     [self.agoraKit setVideoProfile:self.videoProfile swapWidthAndHeight:NO];
+    
+    [self.agoraKit setEncryptionMode:[EncryptionType modeStringWithEncrypType:self.encrypType]];
+    [self.agoraKit setEncryptionSecret:self.encrypSecret];
+    
+    [self.agoraKit createDataStream:&streamID reliable:YES ordered:YES];
     
     [self addLocalSession];
     [self.agoraKit startPreview];
@@ -268,6 +350,7 @@
     }
 }
 
+#pragma mark - <AgoraRtcEngineDelegate>
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed {
     VideoSession *userSession = [self videoSessionOfUid:uid];
     userSession.size = size;
@@ -304,4 +387,18 @@
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine didVideoMuted:(BOOL)muted byUid:(NSUInteger)uid {
     [self setVideoMuted:muted forUid:uid];
 }
+
+-(void)rtcEngine:(AgoraRtcEngineKit *)engine receiveStreamMessageFromUid:(NSUInteger)uid streamId:(NSInteger)streamId data:(NSData *)data {
+    NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    [self.msgTableView appendMsgToTableViewWithMsg:message msgType:MsgTypeChat];
+}
+
+- (void)rtcEngineConnectionDidInterrupted:(AgoraRtcEngineKit *)engine {
+    [self.msgTableView appendMsgToTableViewWithMsg:@"Connection Did Interrupted" msgType:MsgTypeError];
+}
+
+- (void)rtcEngineConnectionDidLost:(AgoraRtcEngineKit *)engine {
+    [self.msgTableView appendMsgToTableViewWithMsg:@"Connection Did Lost" msgType:MsgTypeError];
+}
+
 @end
